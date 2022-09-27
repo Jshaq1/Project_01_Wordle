@@ -87,8 +87,13 @@ function updateGuess(inputLetter) {
 function getResult() {
   guess.forEach((inputLetter, index) => {
     const id = row * 5 + (index + 1)
-    document.getElementById(id).style.backgroundColor = 'purple'
+    const positionG = (guess.indexOf(inputLetter))
+    const positionA = (answer.indexOf(inputLetter))
     if (answer.includes(inputLetter)) {
+      document.getElementById(id).style.backgroundColor = 'Yellow'
+      console.log(guess.indexOf(inputLetter))
+   }if(answer.includes(inputLetter) && positionG == positionA){
+    document.getElementById(id).style.backgroundColor = 'Green'
    }
   })
 }
