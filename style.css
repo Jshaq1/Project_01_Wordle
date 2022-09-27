@@ -1,3 +1,7 @@
+.yellow{
+    background-color: yellow;
+}
+
 .tile {
     display: block;
     border: 2px;
