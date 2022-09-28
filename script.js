@@ -90,12 +90,18 @@ function getResult() {
     const positionG = (guess.indexOf(inputLetter))
     const positionA = (answer.indexOf(inputLetter))
     if(answer.includes(inputLetter) && positionG == positionA){
-      return document.getElementById(id).style.backgroundColor = 'Green'
+      document.getElementById(id).classList.remove('character')
+      document.getElementById(id).classList.add('characterGreen')
+      
      }
     if (answer.includes(inputLetter) && positionG !== positionA ) {
-      return document.getElementById(id).style.backgroundColor = 'Yellow'
-    } else {
-      return document.getElementById(id).style.backgroundColor = 'Grey'
+      document.getElementById(id).classList.remove('character')
+      document.getElementById(id).classList.add('characterYellow')
+    
+
+    } else if(!answer.includes(inputLetter)){
+      document.getElementById(id).classList.remove('character')
+      document.getElementById(id).classList.add('characterGrey')
     }
   })
 }

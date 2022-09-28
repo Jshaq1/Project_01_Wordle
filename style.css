@@ -1,4 +1,7 @@
 body{
+    background-image: url('https://us.123rf.com/450wm/nabiev7art/nabiev7art1903/nabiev7art190300058/119808310-vector-night-brick-wall-background-vector-illustration.jpg?ver=6');
+    background-color: #cccccc;
+    background-size: cover;
     
 }
 
@@ -9,9 +12,7 @@ body{
 .tile {
     display: block;
     border: 2px;
-    border-color: grey;
-    border-style: solid;
-    
+   
 }
 
 #board {
@@ -33,21 +34,139 @@ height: 500px
 #gamespace {
     display: flex;
     justify-content: center;
+    color: rgb(165, 38, 255);
+    
 }
+
+
 
 .character {
     display: flex;
     height: 100%;
     align-items: center;
     justify-content: center;
-    font-family: sans-serif;
     font-size: 25px;
+    color: rgba(255, 255, 255, 0);
+    border-color: rgba(165, 38, 255, 0);
+    border-style: solid; 
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: visible;
+    
+    text-shadow: 
+  .1vw 0vw .25vw #ffffff, .2vw 0vw .25vw #ffffff, .4vw 0vw .25vw #ffffff, 
+
+  .1vw 0vw   0vw #ffffff , .2vw 0vw   0vw #ffffff, .4vw 0vw   0vw #ffffff,
+  .1vw 0vw  .1vw #ffffff, .2vw 0vw  .1vw #ffffff, .4vw 0vw  .1vw #ffffff,
+  .1vw 0vw   2vw #ffffff, .2vw 0vw   2vw #ffffff, .4vw 0vw   2vw #ffffff, 
+
+  .1vw 0vw   1vw #ffffff, .2vw 0vw   1vw #ffffff, .4vw 0vw   5vw #ffffff, 
+  .1vw 0vw   5vw #ffffff, .2vw 0vw  20vw #ffffff, .4vw 0vw  10vw #ffffff,
+  .1vw 0vw  10vw #ffffff, .2vw 0vw  30vw #ffffff, .4vw 0vw  10vw #ffffff;
+}
+.characterYellow {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: rgba(255, 236, 95, 0);
+    stroke: #ffffff;
+    border-color: rgba(165, 38, 255, 0);
+    border-style: solid; 
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: visible;
+    animation: blink 0.3s;
+    animation-iteration-count: 3;
+    
+    text-shadow: 
+  .1vw 0vw .25vw #fbf785, .2vw 0vw .25vw #fbf785, .4vw 0vw .25vw #fbf785, 
+
+  .1vw 0vw   0vw #d4d003, .2vw 0vw   0vw #d4d003, .4vw 0vw   0vw #d4d003,
+  .1vw 0vw  .1vw #d4d003, .2vw 0vw  .1vw #d4d003, .4vw 0vw  .1vw #d4d003,
+  .1vw 0vw   2vw #d4d003, .2vw 0vw   2vw #d4d003, .4vw 0vw   2vw #d4d003, 
+
+  .1vw 0vw   1vw #ffea00, .2vw 0vw   1vw #ffea00, .4vw 0vw   5vw #ffea00, 
+  .1vw 0vw   5vw #ffea00, .2vw 0vw  20vw #ffea00, .4vw 0vw  10vw #ffea00,
+  .1vw 0vw  10vw #ffea00, .2vw 0vw  30vw #ffea00, .4vw 0vw  10vw #ffea00;
+}
+.characterGreen{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: rgba(255, 236, 95, 0);
+    stroke: #ffffff;
+    border-color: rgba(165, 38, 255, 0);
+    border-style: solid; 
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: visible;
+    animation: blink 0.3s;
+    animation-iteration-count: 3;
+    
+    text-shadow: 
+  .1vw 0vw .25vw #8ffb85, .2vw 0vw .25vw #8ffb85, .4vw 0vw .25vw #8ffb85, 
+
+  .1vw 0vw   0vw #03d41b, .2vw 0vw   0vw #03d41b, .4vw 0vw   0vw #03d41b,
+  .1vw 0vw  .1vw #03d41b, .2vw 0vw  .1vw #03d41b, .4vw 0vw  .1vw #03d41b,
+  .1vw 0vw   2vw #03d41b, .2vw 0vw   2vw #03d41b, .4vw 0vw   2vw #03d41b, 
+
+  .1vw 0vw   1vw #15ff00, .2vw 0vw   1vw #15ff00, .4vw 0vw   5vw #15ff00, 
+  .1vw 0vw   5vw #15ff00, .2vw 0vw  20vw #15ff00, .4vw 0vw  10vw #15ff00,
+  .1vw 0vw  10vw #15ff00, .2vw 0vw  30vw #15ff00, .4vw 0vw  10vw #15ff00;
+}
+.characterGrey {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: rgba(255, 255, 255, 0);
+    border-color: rgba(165, 38, 255, 0);
+    border-style: solid; 
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: visible;
+    opacity: 50%;
+    
+    text-shadow: 
+  .1vw 0vw .25vw #ffffff, .2vw 0vw .25vw #ffffff, .4vw 0vw .25vw #ffffff, 
+
+  .1vw 0vw   0vw #ffffff , .2vw 0vw   0vw #ffffff, .4vw 0vw   0vw #ffffff,
+  .1vw 0vw  .1vw #ffffff, .2vw 0vw  .1vw #ffffff, .4vw 0vw  .1vw #ffffff,
+  .1vw 0vw   2vw #ffffff, .2vw 0vw   2vw #ffffff, .4vw 0vw   2vw #ffffff, 
+
+  .1vw 0vw   1vw #ffffff, .2vw 0vw   1vw #ffffff, .4vw 0vw   5vw #ffffff, 
+  .1vw 0vw   5vw #ffffff, .2vw 0vw  20vw #ffffff, .4vw 0vw  10vw #ffffff,
+  .1vw 0vw  10vw #ffffff, .2vw 0vw  30vw #ffffff, .4vw 0vw  10vw #ffffff;
+}
+
+
+@keyframes blink { 
+    50% { border-color:rgba(255, 255, 255, 0) ; }  
+    50% { box-shadow: 0 0 10px rgba(0, 0, 0, 0), 0 0 40px rgba(0, 0, 0, 0), 0 0 60px #00000000;}
+    50% { background: rgba(2,0,36,0) 0% }
+    50% {text-shadow: 
+        .1vw 0vw .25vw #fbf78500, .2vw 0vw .25vw #fbf78500, .4vw 0vw .25vw #fbf78500, 
+      
+        .1vw 0vw   0vw #d4d00300, .2vw 0vw   0vw #d4d00300, .4vw 0vw   0vw #d4d00300,
+        .1vw 0vw  .1vw #d4d00300, .2vw 0vw  .1vw #d4d00300, .4vw 0vw  .1vw #d4d00300,
+        .1vw 0vw   2vw #d4d00300, .2vw 0vw   2vw #d4d00300, .4vw 0vw   2vw #d4d00300, 
+      
+        .1vw 0vw   1vw #ffea0000, .2vw 0vw   1vw #ffea0000, .4vw 0vw   5vw #ffea0000, 
+        .1vw 0vw   5vw #ffea0000, .2vw 0vw  20vw #ffea0000, .4vw 0vw  10vw #ffea0000,
+        .1vw 0vw  10vw #ffea0000, .2vw 0vw  30vw #ffea0000, .4vw 0vw  10vw #ffea0000;}
 }
  
 header {
     display: flex;
     justify-content: center;
     max-width: 100%;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 h1 {
