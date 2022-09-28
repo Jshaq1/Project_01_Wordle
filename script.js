@@ -63,11 +63,11 @@ function enterInput() {
 function checkWinner() {
   if (guess == answer) {
     guess = []
-    return alert('you win idiot')
+    return console.log('You Win')
 
   } if (guess !== answer) {
     guess = []
-    return alert('try again idiot')
+    return console.log('Try again')
   }
 }
 
@@ -89,12 +89,14 @@ function getResult() {
     const id = row * 5 + (index + 1)
     const positionG = (guess.indexOf(inputLetter))
     const positionA = (answer.indexOf(inputLetter))
-    if (answer.includes(inputLetter)) {
-      document.getElementById(id).style.backgroundColor = 'Yellow'
-      console.log(guess.indexOf(inputLetter))
-   }if(answer.includes(inputLetter) && positionG == positionA){
-    document.getElementById(id).style.backgroundColor = 'Green'
-   }
+    if(answer.includes(inputLetter) && positionG == positionA){
+      return document.getElementById(id).style.backgroundColor = 'Green'
+     }
+    if (answer.includes(inputLetter) && positionG !== positionA ) {
+      return document.getElementById(id).style.backgroundColor = 'Yellow'
+    } else {
+      return document.getElementById(id).style.backgroundColor = 'Grey'
+    }
   })
 }
 

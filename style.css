@@ -1,3 +1,7 @@
+body{
+    
+}
+
 .yellow{
     background-color: yellow;
 }
@@ -31,13 +35,25 @@ height: 500px
     justify-content: center;
 }
 
-#character {
-    height: 100%;
+.character {
     display: flex;
+    height: 100%;
     align-items: center;
     justify-content: center;
     font-family: sans-serif;
     font-size: 25px;
+}
+ 
+header {
+    display: flex;
+    justify-content: center;
+    max-width: 100%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
