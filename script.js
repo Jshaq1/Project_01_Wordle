@@ -5,6 +5,10 @@ let guess = []
 let nextSpace = 1;
 let row = 0;
 
+//  if(row > 5){
+//      return alert('You have lost')
+//  }
+  
 
 
 
@@ -29,23 +33,42 @@ function keyInput(event) {
   const clickedElement = event.target
   const inputLetter = clickedElement.dataset.key
 
+  
+  // Handle Delete inputletter // 
+  if (guess.length > 0 && inputLetter == 'delete'){
+      delInput()
+      return
+  }
   // HANDLE PRESSING ENTER TO SUBMIT GUESS //
   //Need to do this first so that when they press enter there is a response before they can add more letters to the next row down
   if (inputLetter == 'enter') {
-    return enterInput()
+    const guessTest = guess.join('')
+    if(validWords.includes(guessTest)){
+    enterInput()
+    return;
+  }else {
+    
+    alert('This is not word.')}
   }
   // HITTING A LETTER/KEY //
-  if (guess.length < 5) {
+  if (guess.length < 5 && inputLetter !== 'delete') {
     updateGuess(inputLetter)
 
   }
 }
 
+function delInput(){
+  const lastInputLetter = document.getElementById(nextSpace - 1)
+  lastInputLetter.textContent = ''
+  nextSpace = nextSpace - 1
+  guess.pop()
+  }
+  
 //---------------------------------------------------//
 
 function enterInput() {
 
-  console.log(guess)
+  
   if (guess.length < 5) {
     return alert('your answer is too short')
   }
@@ -61,16 +84,19 @@ function enterInput() {
 //---------------------------------------------------//
 
 function checkWinner() {
-  if (guess == answer) {
+
+  if (guess === answer) {
     guess = []
     return console.log('You Win')
 
-  } if (guess !== answer) {
+  }if (guess !== answer){
     guess = []
     return console.log('Try again')
   }
+  
 }
 
+//---------------------------------------------------//
 //Place input letter into 'GUESS' array, and renders view in HTML.
 function updateGuess(inputLetter) {
   const currentGuess = guess
@@ -81,27 +107,32 @@ function updateGuess(inputLetter) {
   const nextSpaceDiv = document.getElementById(nextSpace)
   nextSpace = nextSpace + 1
   nextSpaceDiv.textContent = inputLetter
-
+  console.log(nextSpace)
 }
+
+//---------------------------------------------------//
 
 function getResult() {
   guess.forEach((inputLetter, index) => {
     const id = row * 5 + (index + 1)
     const positionG = (guess.indexOf(inputLetter))
     const positionA = (answer.indexOf(inputLetter))
-    if(answer.includes(inputLetter) && positionG == positionA){
-      document.getElementById(id).classList.remove('character')
-      document.getElementById(id).classList.add('characterGreen')
-      
-     }
     if (answer.includes(inputLetter) && positionG !== positionA ) {
       document.getElementById(id).classList.remove('character')
       document.getElementById(id).classList.add('characterYellow')
-    
+      return;
+    }
+    if(positionG === positionA && answer.includes(inputLetter)){
+      document.getElementById(id).classList.remove('character')
+      document.getElementById(id).classList.add('characterGreen')
 
-    } else if(!answer.includes(inputLetter)){
+      return;
+      
+     }
+     else if(!answer.includes(inputLetter)){
       document.getElementById(id).classList.remove('character')
       document.getElementById(id).classList.add('characterGrey')
+      
     }
   })
 }
@@ -111,6 +142,7 @@ function getResult() {
 
 
 //Logging stuff
+
 getAnswer()
 console.log(answer)
 
