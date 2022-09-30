@@ -1,18 +1,16 @@
 //MODEL
 //Define Global Variables
+// let answer = getAnswer()
 let answer = getAnswer()
 let guess = []
 let nextSpace = 1;
 let row = 0;
-
-//  if(row > 5){
-//      return alert('You have lost')
-//  }
+let newArr = [];
+let notAccepted = ['ENTER', 'BACKSPACE', 'DELETE', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
   
 
 
-
-//Generating Random Answer
+// Generating Random Answer
 function getAnswer() {
   return validWords[Math.floor(Math.random() * validWords.length)]
 
@@ -26,6 +24,7 @@ for (let key of keys) {
   key.addEventListener("click", keyInput);
 }
 
+
 // ------------------------------------------------- //
 
 // HANDLE KEY PRESS //
@@ -35,25 +34,23 @@ function keyInput(event) {
 
   
   // Handle Delete inputletter // 
-  if (guess.length > 0 && inputLetter == 'delete'){
+  if (guess.length > 0 && inputLetter == 'DELETE'){
       delInput()
       return
   }
   // HANDLE PRESSING ENTER TO SUBMIT GUESS //
   //Need to do this first so that when they press enter there is a response before they can add more letters to the next row down
-  if (inputLetter == 'enter') {
+  if (inputLetter == 'ENTER') {
     const guessTest = guess.join('')
     if(validWords.includes(guessTest)){
     enterInput()
     return;
   }else {
-    
-    alert('This is not word.')}
+    notAWord()}
   }
   // HITTING A LETTER/KEY //
-  if (guess.length < 5 && inputLetter !== 'delete') {
+  if (guess.length < 5 && !notAccepted.includes(inputLetter)) {
     updateGuess(inputLetter)
-
   }
 }
 
@@ -67,18 +64,20 @@ function delInput(){
 //---------------------------------------------------//
 
 function enterInput() {
-
   
   if (guess.length < 5) {
     return alert('your answer is too short')
   }
+  
   if (guess.length == 5) {
     
     getResult()
+    
     guess = guess.join('')
     checkWinner()
-
+    answerToArr()
   }row = row +1;
+  
 }
 
 //---------------------------------------------------//
@@ -87,64 +86,126 @@ function checkWinner() {
 
   if (guess === answer) {
     guess = []
-    return console.log('You Win')
+    return playerWin()
+
+  }if (row === 5 && guess !== newArr){
+    guess = []
+    return playerLost()
 
   }if (guess !== answer){
     guess = []
-    return console.log('Try again')
-  }
+    return playerAttempt()
   
-}
+}}
 
 //---------------------------------------------------//
 //Place input letter into 'GUESS' array, and renders view in HTML.
 function updateGuess(inputLetter) {
   const currentGuess = guess
-  if (currentGuess.length < 5) {
+  if (currentGuess.length < 5 ) {
     currentGuess.push(inputLetter);
   }
 
   const nextSpaceDiv = document.getElementById(nextSpace)
   nextSpace = nextSpace + 1
   nextSpaceDiv.textContent = inputLetter
-  console.log(nextSpace)
+  
 }
 
 //---------------------------------------------------//
-
-function getResult() {
-  guess.forEach((inputLetter, index) => {
-    const id = row * 5 + (index + 1)
-    const positionG = (guess.indexOf(inputLetter))
-    const positionA = (answer.indexOf(inputLetter))
-    if (answer.includes(inputLetter) && positionG !== positionA ) {
-      document.getElementById(id).classList.remove('character')
-      document.getElementById(id).classList.add('characterYellow')
-      return;
-    }
-    if(positionG === positionA && answer.includes(inputLetter)){
-      document.getElementById(id).classList.remove('character')
-      document.getElementById(id).classList.add('characterGreen')
-
-      return;
-      
-     }
-     else if(!answer.includes(inputLetter)){
-      document.getElementById(id).classList.remove('character')
-      document.getElementById(id).classList.add('characterGrey')
-      
-    }
-  })
+function answerToArr(){
+  newArr = []
+  for(let ans of answer){
+    newArr.push(ans)
+    
+}
 }
 
 
 
+function getResult() {
+  
+  guess.forEach((inputLetter, index) => {
+    const id = row * 5 + (index + 1)
+    const letterG = (guess[index])
+    const letterA = (newArr[index])
+    document.getElementById(id).classList.remove('character')
+    document.getElementById(id).classList.add('characterGrey')
+    
+    if(guess[index] === newArr[index]){
+      document.getElementById(id).classList.remove('characterGrey')
+      document.getElementById(id).classList.add('characterGreen')
+      newArr[index] = '$'
+      console.log(newArr)
+
+     
+    }
+    })
+
+    guess.forEach((inputLetter, index) => {
+      const id = row * 5 + (index + 1)
+    if (newArr.includes(inputLetter) ) {
+      document.getElementById(id).classList.remove('characterGrey')
+      document.getElementById(id).classList.add('characterYellow')
+
+      
+    }
+    // else if(!answer.includes(inputLetter)){
+    //   document.getElementById(id).classList.remove('character')
+    //   document.getElementById(id).classList.add('characterGrey')
+      
+    // }
+    
+  })}
 
 
+// modal
+
+let winnerDisplay = document.getElementById('winner-display')
+
+function playerLost() {
+  
+  winnerDisplay.textContent = 'Game Over!'
+  winnerDisplay.classList.add('characterRed')
+}
+
+
+function tryAgain(){
+  let attemptMessage = ['So bad!', 'Dummy!', 'Preschool?', 'One day!', 'You can do it!', 'Yikes!']
+  return attemptMessage[Math.floor(Math.random() * attemptMessage.length)]
+}
+
+function playerAttempt() {
+  
+  winnerDisplay.textContent = tryAgain()
+  winnerDisplay.classList.add('characterYellow')
+}
+
+function playerWin() {
+  winnerDisplay.textContent = 'Congratulations'
+  winnerDisplay.classList.add('characterGreen')
+
+}
+function notAWord() {
+  winnerDisplay.textContent = 'Not a Word'
+  winnerDisplay.classList.add('characterRed')
+
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+    winnerDisplay.textContent = ''
+    winnerDisplay.classList.remove('characterGreen')
+    winnerDisplay.classList.remove('characterYellow')
+    winnerDisplay.classList.remove('characterRed')
+  }
+}
 //Logging stuff
-
-getAnswer()
+answerToArr()
+// getAnswer()
 console.log(answer)
+console.log(newArr)
 
 
 

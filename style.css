@@ -39,7 +39,7 @@ height: 500px
     display: flex;
     justify-content: center;
     color: rgb(165, 38, 255);
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 
@@ -56,7 +56,7 @@ height: 500px
     font-size: 50px;
     font-family: Arial, Helvetica, sans-serif;
     overflow: visible;
-    
+    /* https://html-css-js.com/css/generator/text-shadow/ */
     text-shadow: 
   .1vw 0vw .25vw #ffffff, .2vw 0vw .25vw #ffffff, .4vw 0vw .25vw #ffffff, 
 
@@ -147,7 +147,34 @@ height: 500px
   .1vw 0vw   5vw #ffffff, .2vw 0vw  20vw #ffffff, .4vw 0vw  10vw #ffffff,
   .1vw 0vw  10vw #ffffff, .2vw 0vw  30vw #ffffff, .4vw 0vw  10vw #ffffff;
 }
+.characterRed {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    color: rgba(255, 236, 95, 0);
+    stroke: #ffffff;
+    border-color: rgba(165, 38, 255, 0);
+    border-style: solid; 
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: visible;
+    animation: blink 0.3s;
+    animation-iteration-count: 3;
+    
+    text-shadow: 
+  .1vw 0vw .25vw #fb8585, .2vw 0vw .25vw #fb8585, .4vw 0vw .25vw #fb8585, 
 
+  .1vw 0vw   0vw #d40303, .2vw 0vw   0vw #d40303, .4vw 0vw   0vw #d40303,
+  .1vw 0vw  .1vw #d40303, .2vw 0vw  .1vw #d40303, .4vw 0vw  .1vw #d40303,
+  .1vw 0vw   2vw #d40303, .2vw 0vw   2vw #d40303, .4vw 0vw   2vw #d40303, 
+
+  .1vw 0vw   1vw #ff0000, .2vw 0vw   1vw #ff0000, .4vw 0vw   5vw #ff0000, 
+  .1vw 0vw   5vw #ff0000, .2vw 0vw  20vw #ff0000, .4vw 0vw  10vw #ff0000,
+  .1vw 0vw  10vw #ff0000, .2vw 0vw  30vw #ff0000, .4vw 0vw  10vw #ff0000;
+
+  }
 
 @keyframes blink { 
     50% { border-color:rgba(255, 255, 255, 0) ; }  
@@ -166,6 +193,8 @@ height: 500px
 }
  
 header {
+    margin-top: 50px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     max-width: 100%;
@@ -177,6 +206,11 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 
@@ -194,8 +228,7 @@ textarea {
     font-family: sans-serif;
     margin-right: 10%;
     margin-left: 10%;
-    
-    
+    margin-bottom: 10%;
 }
 
 
@@ -207,7 +240,6 @@ textarea {
     height: 50px;
     width: 50px;
     flex-basis: auto;
-    
 }
 
 .row {
@@ -230,7 +262,7 @@ textarea {
 }
 
 #row-2 {
-    margin-right: 6%;
+    margin-right: 1%;
     display: flex;
     align-items: stretch;
     max-height: 60px;
@@ -247,11 +279,13 @@ textarea {
     margin-left: 8%;
 }
 
-#spacebar {
+#enter {
     display: flex;
-    flex-grow: 5;
+    flex-grow: 10;
     max-width: 100px;
     flex-basis: auto;
+    align-items: center;
+    justify-content: center;
 }
 
 button {
@@ -262,3 +296,28 @@ button {
     background: radial-gradient(circle, rgba(63,94,251,0) 0%, rgba(178,0,255,1) 100%);
     color: white;
 }
+
+key2 {
+    
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,0) 0%, rgba(178,0,255,1) 100%);
+    
+}
+
+#commentArea{
+    height: 50px;
+}
+
+  
+  
+  
+  
+  
+  /* <div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h1 id="modal-display" ></h1>
+  </div>
+
+</div> */
+

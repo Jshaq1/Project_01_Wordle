@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
         <meta charset="utf-8">
         <meta http-eQuiv="X-UA-Compatible" content="IE=edge">
         <title></title>
@@ -12,9 +13,17 @@
     <body>
         <header>
             <h1>WORDLE</h1> 
+            
         </header>
+        <div id="commentArea">
+
+            <h2 id="winner-display" ></h2>
+        </div>
+        
+       
 
         <section id="gamespace">
+            
             <div id="board">
                 <div id="row">
                     <div class="tile">
@@ -118,6 +127,10 @@
                         <div id="30" class="character"></div>
                     </div>
                 </div>
+                <div id="myModal" class="modal">
+
+                
+            
         </section>
 
         <section id="keyboard">
@@ -146,6 +159,7 @@
                     <button class="key" data-key="L">L</button>
                 </div>
                 <div class="row" id="row-2">
+                    <button class="key" data-key="ENTER" id="enter">ENTER </button>
                     <button class="key" data-key="Z">Z</button>
                     <button class="key" data-key="X">X</button>
                     <button class="key" data-key="C">C</button>
@@ -153,16 +167,15 @@
                     <button class="key" data-key="B">B</button>
                     <button class="key" data-key="N">N</button>
                     <button class="key" data-key="M">M</button>
+                    
+                    <button class="key" data-key="DELETE" id="enter">DELETE</button>
                 </div>
-                <div class="row" id="row-3">
-                    <button class="key" data-key="delete">del</button>
-                    <button class="key" data-key="enter" id="spacebar">enter </button>
-                    <button class="key">&#9249; all</button>
-                </div>
+                
             </div>
         </section>
        
         <script src="data.js" ></script>
         <script src="script.js" ></script>
+        <script src="keyboard.js" ></script>
     </body>
 </html>

@@ -3,8 +3,8 @@
 Wordle Clone for GA
 
 ## Work Plan
-- [ ] Create HTML
-- [ ] Create CSS
-- [ ] Create JS 
+- [x] Create HTML
+- [x] Create CSS
+- [x] Create JS 
 
 
