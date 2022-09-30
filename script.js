@@ -6,13 +6,14 @@ let guess = []
 let nextSpace = 1;
 let row = 0;
 let newArr = [];
-let notAccepted = ['ENTER', 'BACKSPACE', 'DELETE', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+let notAccepted = ['ENTER', 'BACKSPACE', 'DELETE', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'META']
   
 
 
 // Generating Random Answer
 function getAnswer() {
-  return validWords[Math.floor(Math.random() * validWords.length)]
+   let randomWord = wordleArray[Math.floor(Math.random() * wordleArray.length)]
+   return randomWord.toLocaleUpperCase()
 
 }
 
@@ -159,24 +160,26 @@ function getResult() {
   })}
 
 
-// modal
+
 
 let winnerDisplay = document.getElementById('winner-display')
 
 function playerLost() {
-  
-  winnerDisplay.textContent = 'Game Over!'
+  winnerDisplay.classList.remove('characterYellow')
+  winnerDisplay.classList.remove('characterGreen')
+  winnerDisplay.textContent = ('The word was '+ answer)
   winnerDisplay.classList.add('characterRed')
 }
 
 
 function tryAgain(){
-  let attemptMessage = ['So bad!', 'Dummy!', 'Preschool?', 'One day!', 'You can do it!', 'Yikes!']
+  let attemptMessage = ['So bad!', 'Dummy!', 'Geez', 'One day!', 'You can do it!', 'Yikes!', 'Nice Try!']
   return attemptMessage[Math.floor(Math.random() * attemptMessage.length)]
 }
 
 function playerAttempt() {
-  
+  winnerDisplay.classList.remove('characterRed')
+  winnerDisplay.classList.remove('characterGreen')
   winnerDisplay.textContent = tryAgain()
   winnerDisplay.classList.add('characterYellow')
 }
@@ -187,20 +190,14 @@ function playerWin() {
 
 }
 function notAWord() {
+  winnerDisplay.classList.remove('characterYellow')
+  winnerDisplay.classList.remove('characterGreen')
   winnerDisplay.textContent = 'Not a Word'
   winnerDisplay.classList.add('characterRed')
 
 }
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-    winnerDisplay.textContent = ''
-    winnerDisplay.classList.remove('characterGreen')
-    winnerDisplay.classList.remove('characterYellow')
-    winnerDisplay.classList.remove('characterRed')
-  }
-}
+
 //Logging stuff
 answerToArr()
 // getAnswer()

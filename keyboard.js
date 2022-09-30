@@ -23,7 +23,6 @@ function keyInput(event) {
       enterInput()
       return;
     }else {
-      
       notAWord()}
     }
     // HITTING A LETTER/KEY //
