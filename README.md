@@ -13,7 +13,7 @@ Wordle Clone for GA
 
 
 
-FUNCTIONS 
+## FUNCTION ORDER
 // Generating Random Answer
 
 // KEYBOARD EVENT LISTENER 
@@ -31,10 +31,12 @@ FUNCTIONS
 
     //Place input letter into 'GUESS' arrayand renders view in HTML.
 
+// RENDER VIEW (Somehow)
+
 
 // --------------------------------------------------------------------//
 
-STRUGGLES JS
+## STRUGGLES JS
 
     - Setting the row and tile ID as view is updated, resorted to using a variable to count up as key press occurs 
     - Setting the ID of each tile from 1-30 presented issues in checking the tiles. 
@@ -53,7 +55,7 @@ STRUGGLES JS
 
 // ---------------------------------------------------------------------//
 
-Struggles CSS 
+## Struggles CSS 
 
 - FONTS 
     - Could not get custom fonts to be friendly with my text styling. No fix attained 
