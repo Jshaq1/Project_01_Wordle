@@ -128,7 +128,7 @@ height: 500px
     align-items: center;
     justify-content: center;
     font-size: 25px;
-    color: rgba(255, 255, 255, 0);
+    color: rgba(255, 255, 255, 0.546);
     border-color: rgba(165, 38, 255, 0);
     border-style: solid; 
     font-size: 50px;
@@ -138,13 +138,7 @@ height: 500px
     
     text-shadow: 
   .1vw 0vw .25vw #ffffff, .2vw 0vw .25vw #ffffff, .4vw 0vw .25vw #ffffff, 
-
-  .1vw 0vw   0vw #ffffff , .2vw 0vw   0vw #ffffff, .4vw 0vw   0vw #ffffff,
-  .1vw 0vw  .1vw #ffffff, .2vw 0vw  .1vw #ffffff, .4vw 0vw  .1vw #ffffff,
-  .1vw 0vw   2vw #ffffff, .2vw 0vw   2vw #ffffff, .4vw 0vw   2vw #ffffff, 
-
-  .1vw 0vw   1vw #ffffff, .2vw 0vw   1vw #ffffff, .4vw 0vw   5vw #ffffff, 
-  .1vw 0vw   5vw #ffffff, .2vw 0vw  20vw #ffffff, .4vw 0vw  10vw #ffffff,
+    .1vw 0vw   1vw #ffffff, .2vw 0vw   1vw #ffffff, .4vw 0vw   5vw #ffffff, 
   .1vw 0vw  10vw #ffffff, .2vw 0vw  30vw #ffffff, .4vw 0vw  10vw #ffffff;
 }
 .characterRed {
