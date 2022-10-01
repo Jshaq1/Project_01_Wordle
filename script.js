@@ -6,7 +6,7 @@ let guess = []
 let nextSpace = 1;
 let row = 0;
 let newArr = [];
-let notAccepted = ['ENTER', 'BACKSPACE', 'DELETE', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', 'META']
+let notAccepted = ['ENTER', 'BACKSPACE', 'DELETE', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0','-', '=', ';', '.', '/', '[', ']', '`', 'META']
   
 
 
@@ -55,6 +55,7 @@ function keyInput(event) {
   }
 }
 
+// Handle Delete Input
 function delInput(){
   const lastInputLetter = document.getElementById(nextSpace - 1)
   lastInputLetter.textContent = ''
@@ -63,7 +64,7 @@ function delInput(){
   }
   
 //---------------------------------------------------//
-
+// HANDLE ENTER PRESS //
 function enterInput() {
   
   if (guess.length < 5) {
@@ -82,7 +83,7 @@ function enterInput() {
 }
 
 //---------------------------------------------------//
-
+// CHECK CONDITIONALS FOR WINNING //
 function checkWinner() {
 
   if (guess === answer) {
@@ -138,8 +139,6 @@ function getResult() {
       document.getElementById(id).classList.add('characterGreen')
       newArr[index] = '$'
       console.log(newArr)
-
-     
     }
     })
 
@@ -173,7 +172,7 @@ function playerLost() {
 
 
 function tryAgain(){
-  let attemptMessage = ['So bad!', 'Dummy!', 'Geez', 'One day!', 'You can do it!', 'Yikes!', 'Nice Try!']
+  let attemptMessage = ['So bad!', 'Dummy!', 'Geez', 'Nope!', 'You can do it!', 'Yikes!', 'Nice Try!']
   return attemptMessage[Math.floor(Math.random() * attemptMessage.length)]
 }
 
@@ -202,7 +201,6 @@ function notAWord() {
 answerToArr()
 // getAnswer()
 console.log(answer)
-console.log(newArr)
 
 
 

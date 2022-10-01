@@ -83,7 +83,7 @@ height: 500px
     overflow: visible;
     animation: blink 0.3s;
     animation-iteration-count: 3;
-    
+    /* https://html-css-js.com/css/generator/text-shadow/ */
     text-shadow: 
   .1vw 0vw .25vw #fbf785, .2vw 0vw .25vw #fbf785, .4vw 0vw .25vw #fbf785, 
 
@@ -110,7 +110,7 @@ height: 500px
     overflow: visible;
     animation: blink 0.3s;
     animation-iteration-count: 3;
-    
+    /* https://html-css-js.com/css/generator/text-shadow/ */
     text-shadow: 
   .1vw 0vw .25vw #8ffb85, .2vw 0vw .25vw #8ffb85, .4vw 0vw .25vw #8ffb85, 
 
@@ -135,7 +135,7 @@ height: 500px
     font-family: Arial, Helvetica, sans-serif;
     overflow: visible;
     opacity: 50%;
-    
+    /* https://html-css-js.com/css/generator/text-shadow/ */
     text-shadow: 
   .1vw 0vw .25vw #ffffff, .2vw 0vw .25vw #ffffff, .4vw 0vw .25vw #ffffff, 
     .1vw 0vw   1vw #ffffff, .2vw 0vw   1vw #ffffff, .4vw 0vw   5vw #ffffff, 
@@ -156,7 +156,7 @@ height: 500px
     overflow: visible;
     animation: blink 0.3s;
     animation-iteration-count: 3;
-    
+    /* https://html-css-js.com/css/generator/text-shadow/ */
     text-shadow: 
   .1vw 0vw .25vw #fb8585, .2vw 0vw .25vw #fb8585, .4vw 0vw .25vw #fb8585, 
 
@@ -169,7 +169,7 @@ height: 500px
   .1vw 0vw  10vw #ff0000, .2vw 0vw  30vw #ff0000, .4vw 0vw  10vw #ff0000;
 
   }
-
+/* https://html-css-js.com/css/generator/text-shadow/ */
 @keyframes blink { 
     50% { border-color:rgba(255, 255, 255, 0) ; }  
     50% { box-shadow: 0 0 10px rgba(0, 0, 0, 0), 0 0 40px rgba(0, 0, 0, 0), 0 0 60px #00000000;}
