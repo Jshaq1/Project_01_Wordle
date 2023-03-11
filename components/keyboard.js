@@ -1,15 +1,9 @@
-document.addEventListener('keydown', keyInput)
-    // Alert the key name and key code on keydown
-
-// ------------------------------------------------- //
-
 
 // HANDLE KEY PRESS //
-function keyInput(event) {
+const keyInput = (event) => {
     const clickedElement = event.key
     const inputLetter = event.key.toUpperCase()
   
-    
     // Handle Delete inputletter // 
     if (guess.length > 0 && inputLetter == 'BACKSPACE'){
         delInput()
@@ -31,3 +25,5 @@ function keyInput(event) {
   
     }
   }
+  
+  document.addEventListener('keydown', keyInput)
