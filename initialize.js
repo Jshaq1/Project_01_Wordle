@@ -4,7 +4,7 @@ let guess = []
 let nextSpace = 1;
 let row = 0;
 let newArr = [];
-let notAccepted = ['ENTER', 'BACKSPACE', 'DELETE', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', ';', '.', '/', '[', ']', '`', 'META']
+let notAccepted = ['ENTER', 'BACKSPACE', 'DELETE', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', ';', '.', '/', '[', ']', '`', 'META','CONTROL', 'ALT', 'CAPSLOCK', 'SHIFT']
 
 function updateGuess(inputLetter) {
   const currentGuess = guess

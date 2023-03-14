@@ -8,6 +8,7 @@ const delInput = () => {
   
   // HANDLE ENTER PRESS //
   const enterInput = () => {
+  
     if (guess.length < 5) {
       return alert('your answer is too short')
     }

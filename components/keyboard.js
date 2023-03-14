@@ -3,7 +3,7 @@
 const keyInput = (event) => {
     const clickedElement = event.key
     const inputLetter = event.key.toUpperCase()
-  
+
     // Handle Delete inputletter // 
     if (guess.length > 0 && inputLetter == 'BACKSPACE'){
         delInput()
@@ -11,6 +11,9 @@ const keyInput = (event) => {
     }
     // HANDLE PRESSING ENTER TO SUBMIT GUESS //
     //Need to do this first so that when they press enter there is a response before they can add more letters to the next row down
+    if (inputLetter == 'ENTER' && row === 6){
+      location.reload()
+    }
     if (inputLetter == 'ENTER') {
       const guessTest = guess.join('')
       if(validWords.includes(guessTest)){
