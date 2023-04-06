@@ -10,6 +10,7 @@ Wordle Clone for GA
 - [x] Create CSS
     -[x] Position everything 
 - [x] Create JS 
+- testing
 
 
 
